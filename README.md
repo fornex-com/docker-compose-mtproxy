@@ -3,27 +3,18 @@ With docker-compose file you can easy install telegram mtproto proxy and configu
 
 Also build in watchdog check for update telegram-proxy server and if new version come - update it and restart without any action from you.
 
-# Docker
-If you have one, read next, if not:
+# Install Docker and Compose
 
-`curl -sSL https://get.docker.com/ | sh`
+Install Docker core: https://docs.docker.com/engine/install/ubuntu/
 
-install docker-compose
-On Ubuntu/Debian:
-
-`sudo apt-get update`
-
-`sudo apt-get install docker-compose`
-
-or
-
-`sudo apt-get -y install python-pip`
-
-`sudo pip install docker-compose`
+Install via apt compose plugini (ubuntu/debian):
+```
+apt install docker-compose-plugin
+```
 
 
 # Clone repository
-`git clone https://github.com/iShift/docker-compose-mtproxy.git`
+`git clone https://github.com/fornex-com/docker-compose-mtproxy.git`
 
 # Edit config.env
 In that file you can configure:
@@ -33,8 +24,8 @@ In that file you can configure:
 - Workers count
 
 # Change proxy port
-By default, proxy start at 443 port, if you want another - edit **docker-compose.yml**:
-- "**443**:443" 
+By default, proxy start at 110 port, if you want another - edit **docker-compose.yml**:
+- "**110**:443" 
 
 # Start proxy
 go to folder with that repository:
@@ -43,22 +34,18 @@ go to folder with that repository:
 
 and run:
 
-`docker-compose up -d`
+`docker compose up -d`
 
 # Get logs and connections info
-`docker-compose logs`
+`docker compose logs`
 
 
 # Stop proxy
 From repository folder:
 
-`docker-compose down`
+`docker compose down`
 
-# Error ERROR: Couldn't connect to Docker daemon at http+docker://localhost - is it running?
-Use `sudo` with docker comands or add your account to docker group:
-`sudo usermod -aG docker $(whoami)`
 
 # Links
-Telegram docker hub: https://hub.docker.com/r/telegrammessenger/proxy/
-
-Source Code: https://github.com/TelegramMessenger/MTProxy
++ Telegram docker hub: https://hub.docker.com/r/telegrammessenger/proxy/
++ Source Code: https://github.com/TelegramMessenger/MTProxy
