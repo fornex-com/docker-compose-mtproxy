@@ -5,7 +5,7 @@ services:
         image: telegrammessenger/proxy:latest
         container_name: tg-proxy
         ports:
-          - "443:443" #Proxy port, if you wish to change port - change left side 443 to another. Right side - it is port inside docker container
+          - "110:443" #Proxy port, if you wish to change port - change left side 443 to another. Right side - it is port inside docker container
         volumes:
            - "proxy-config:/data"
         restart: unless-stopped
